@@ -1,0 +1,10 @@
+[package]
+name = "trimesh"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+num-traits = { version = "0.2" }
+
+[profile.dev]
+opt-level = 3
