@@ -30,18 +30,32 @@ where
         self.max
     }
 
-    /// Compute the center
-    pub fn center(&self) -> Vector3<T> {
-        (self.max + self.min) * 0.5
-    }
-
     /// Compute the size
     pub fn size(&self) -> Vector3<T> {
         self.max - self.min
     }
+}
+
+impl BoundingBox<f32> {
+    /// Compute the center
+    pub fn center(&self) -> Vector3<f32> {
+        (self.max + self.min) * 0.5_f32
+    }
 
     /// Compute the half size
-    pub fn halfsize(&self) -> Vector3<T> {
-        (self.max - self.min) * 0.5
+    pub fn halfsize(&self) -> Vector3<f32> {
+        (self.max - self.min) * 0.5_f32
+    }
+}
+
+impl BoundingBox<f64> {
+    /// Compute the center
+    pub fn center(&self) -> Vector3<f64> {
+        (self.max + self.min) * 0.5_f64
+    }
+
+    /// Compute the half size
+    pub fn halfsize(&self) -> Vector3<f64> {
+        (self.max - self.min) * 0.5_f64
     }
 }
